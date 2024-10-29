@@ -1,3 +1,4 @@
+
 // Configuration
 const config = {
   type: Phaser.AUTO,
@@ -30,30 +31,17 @@ function create() {
 
   // Ship
   this.ship = this.add.rectangle(400, 500, 50, 50, 0x00FFFF);
+  this.ship.setOrigin(0.5, 0.5); // Center the ship
 
   // Enemies
   this.enemies = this.add.group();
-  this.enemies.createMultiple({
-    classType: Phaser.GameObjects.Rectangle,
-    frameConfig: {
-      width: 50,
-      height: 50,
-      fillStyle: { color: 0xFF0000 }
-    },
-    quantity: 10
-  });
+  const enemy = this.enemies.create(400, 100, undefined); // Create an enemy at a visible position
+  enemy.body.setVelocityY(100);
 
   // Bullets
   this.bullets = this.add.group();
-  this.bullets.createMultiple({
-    classType: Phaser.GameObjects.Rectangle,
-    frameConfig: {
-      width: 10,
-      height: 10,
-      fillStyle: { color: 0xFFFF00 }
-    },
-    quantity: 20
-  });
+  const bullet = this.bullets.create(400, 500, undefined); // Create a bullet at the ship's position
+  bullet.body.setVelocityY(-400);
 
   // Score
   this.score = 0;
@@ -86,14 +74,8 @@ function update(time, delta) {
 
   // Enemy spawn
   if (Math.random() < 0.1) {
-    const enemy = this.enemies.get();
-    if (enemy) {
-      enemy
-        .setVelocityY(100)
-        .setPosition(Math.random() * 800, 0)
-        .setActive(true)
-        .setVisible(true);
-    }
+    const enemy = this.enemies.create(Math.random() * 800, 0);
+    enemy.body.setVelocityY(100);
   }
 
   // Collision detection
