@@ -1,44 +1,24 @@
 
 /* Global Styles */
+
 body {
   background-color: #000;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Add this to hide scrollbar */
+  overflow: hidden;
 }
+
+/* Game Container Styles */
 
 #game-container {
-  width: 100vw; /* Change to full viewport width */
-  height: 100vh; /* Change to full viewport height */
-  border: none; /* Remove border */
-  margin: 0; /* Remove margin */
-  position: relative; /* Add for absolute positioning */
-  background: url('assets/images/background.png') no-repeat center center fixed; /* Add background image */
-  background-size: cover; /* Add to scale background image */
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-/* Game-specific Styles */
-.ship {
-  width: 50px;
-  height: 50px;
-  background-color: #0ff;
-  position: absolute;
-}
-
-.enemy {
-  width: 50px;
-  height: 50px;
-  background-color: #f00;
-  position: absolute;
-}
-
-.bullet {
-  width: 10px;
-  height: 10px;
-  background-color: #ff0;
-  position: absolute;
-}
+/* Score Text Styles */
 
 .score-text {
   font-size: 32px;
@@ -46,4 +26,15 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+/* Game Over Text Styles */
+
+.game-over-text {
+  font-size: 64px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
