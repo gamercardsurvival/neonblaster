@@ -1,0 +1,54 @@
+
+/* Global Styles */
+
+body {
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#game-container {
+  width: 800px;
+  height: 600px;
+  border: 1px solid #ccc;
+  margin: 40px auto;
+}
+
+/* Game-specific Styles */
+
+.ship {
+  width: 50px;
+  height: 50px;
+  background-color: #0ff;
+  position: absolute;
+}
+
+.enemy {
+  width: 50px;
+  height: 50px;
+  background-color: #f00;
+  position: absolute;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ff0;
+  position: absolute;
+}
+
+.score-text {
+  font-size: 32px;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
